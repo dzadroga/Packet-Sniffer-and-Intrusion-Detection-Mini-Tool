@@ -3,6 +3,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import joblib
 
+#Label Meanings: 
+# 0 = Normal
+# 1 = Suspicious
+
 df = pd.read_csv("traffic_log.csv")
 
 #if no label exists 
