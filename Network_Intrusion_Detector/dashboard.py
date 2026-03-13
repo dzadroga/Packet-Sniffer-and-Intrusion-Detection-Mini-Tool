@@ -22,3 +22,13 @@ fig, ax = plt.subplots()
 proto_counts.plot(kind="bar", ax=ax)
 st.pyplot(fig)
 
+#Suspicious traffic
+if "prediction" in df.columns:
+    st.subheader("Traffic Classification")
+
+    pred_counts = df["prediction"].value_counts()
+
+    fig2, ax2 = plt.subplots()
+    pred_counts.plot(kind="pie", autopct="%1.1f%%", ax=ax2)
+    st.pyplot(fig2)
+
