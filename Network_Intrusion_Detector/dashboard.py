@@ -32,3 +32,11 @@ if "prediction" in df.columns:
     pred_counts.plot(kind="pie", autopct="%1.1f%%", ax=ax2)
     st.pyplot(fig2)
 
+#SYN Flood Detection
+st.subheader("Top SYN Senders")
+
+syn = df.groupby("src")["syn_count"].max().sort_values(ascending=False).head(10)
+
+fig3, ax3 = plt.subplots()
+syn.plot(kind="bar", ax=ax3)
+st.pyplot(fig3)
