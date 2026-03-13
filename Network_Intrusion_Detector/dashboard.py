@@ -9,3 +9,16 @@ try:
 except: 
     st.warning("No traffic captured yet")
     st.stop()
+
+st.subheader("Recent Traffic")
+st.datafram(df.tail(50))
+
+#Protocol Distribution
+st.subheader("Protocol Distribution")
+
+proto_counts = df["protocol"].value_counts()
+
+fig, ax = plt.subplots()
+proto_counts.plot(kind="bar", ax=ax)
+st.pyplot(fig)
+
